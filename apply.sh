@@ -43,8 +43,14 @@ pushd ~/.xmonad
 popd
 xmonad --restart 2>&1
 
+# Restart qtile
+qtile-cmd -o cmd -f restart
+
 # Tell the remote vim named "preview" to reload its config.
 vim --servername preview --remote-send ':source ~/.vim/vimrc<CR>'
+
+# Print a preview of the colorscheme in 24bit to terminal.
+./base16.py
 
 # Write to save file.
 echo "$scheme" > theme
