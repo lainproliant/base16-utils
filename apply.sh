@@ -43,9 +43,6 @@ pushd ~/.xmonad
 popd
 xmonad --restart 2>&1
 
-# Restart qtile
-qtile-cmd -o cmd -f restart
-
 # Tell the remote vim named "preview" to reload its config.
 vim --servername preview --remote-send ':source ~/.vim/vimrc<CR>'
 
