@@ -1,0 +1,3 @@
+[submodule "auto-base16-theme"]
+	path = auto-base16-theme
+	url = https://github.com/makuto/auto-base16-theme
