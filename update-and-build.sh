@@ -1,4 +1,5 @@
 #!/bin/sh
+sudo pip install pybase16-builder
 git submodule update --init --recursive
 rm -rf ./output ./schemes ./sources ./templates
 mkdir -p /tmp/go

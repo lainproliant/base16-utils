@@ -9,8 +9,8 @@ fi
 
 files=(
    ~/.Xdefaults
-   ~/.config/termite/config.jinja
    ~/.vim/base16.vim
+   ~/.config/alacritty/alacritty.yml.jinja
    ~/.config/rofi/base16.rasi
    )
 
@@ -19,9 +19,9 @@ for file in ${files[*]}; do
    pybase16 inject -s "$scheme" -f $file
 done
 
-# Regen termite's config.
-pushd ~/.config/termite
-./generate.py > config
+# Regen alacritty's config.
+pushd ~/.config/alacritty
+./generate.py > alacritty.yml
 popd
 
 # Tell all termites to reload their configs.
@@ -29,13 +29,6 @@ killall -USR1 termite
 
 # Reload Xdefaults
 xrdb -merge ~/.Xdefaults
-
-# Kill conky and regen its config.
-pushd ~/.conky
-killall conky
-sleep 1
-./generate.py
-popd
 
 # Restart xmonad, and thus polybar
 pushd ~/.xmonad
