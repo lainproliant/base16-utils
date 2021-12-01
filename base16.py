@@ -13,6 +13,7 @@ A simple wrapper around Base16 colorschemes.
 """
 
 import re
+import sys
 from pathlib import Path
 from typing import List
 
@@ -71,6 +72,15 @@ class Base16:
         self.print_sample(0x0E, "Keywords, Storage, Selector, Markup Italic, Diff Changed")
         self.print_sample(0x0F, "Deprecated, Open/Closing Embedded Language Tags, e.g. `<?php ?>`")
 
+    def run(self):
+        if len(sys.argv) < 2:
+            self.print_all_samples()
+
+        else:
+            index = int(sys.argv[1], 16)
+            sys.stdout.write("#" + self.base16colors[index])
+
+
 # --------------------------------------------------------------------
 if __name__ == '__main__':
-    Base16.load_from_xdefaults().print_all_samples()
+    Base16.load_from_xdefaults().run()
