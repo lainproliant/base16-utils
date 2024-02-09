@@ -16,7 +16,7 @@ files=(
 
 # inject colorscheme into every file we care about.
 for file in ${files[*]}; do
-   pybase16 inject -s "$scheme" -f $file
+   pipenv run pybase16 inject -s "$scheme" -f $file
 done
 
 # Regen alacritty's config.
