@@ -10,7 +10,7 @@ fi
 files=(
    ~/.Xdefaults
    ~/.vim/base16.vim
-   ~/.config/alacritty/alacritty.yml.jinja
+   ~/.config/alacritty/alacritty.toml.jinja
    ~/.config/rofi/base16.rasi
    )
 
