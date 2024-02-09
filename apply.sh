@@ -21,7 +21,7 @@ done
 
 # Regen alacritty's config.
 pushd ~/.config/alacritty
-./generate.py > alacritty.yml
+./generate.py > alacritty.toml
 popd
 
 # Tell all termites to reload their configs.
